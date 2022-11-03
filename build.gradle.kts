@@ -42,6 +42,8 @@ dependencies {
     bukkitLibrary("com.github.shynixn.mccoroutine:mccoroutine-bukkit-api:${Versions.MC_COROUTINE}")
     bukkitLibrary("com.github.shynixn.mccoroutine:mccoroutine-bukkit-core:${Versions.MC_COROUTINE}")
     library("org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.COROUTINE}")
+    library("io.github.highright1234:shotokonoko:0.0.9")
+    compileOnly(files("libs/SeniorCenterTwerkMachine.jar"))
     compileOnly("io.papermc.paper:paper-api:${project.bukkit.apiVersion}-R0.1-SNAPSHOT")
     library(kotlin("stdlib-jdk8"))
     library(kotlin("reflect"))
@@ -68,9 +70,12 @@ bukkit {
     main = "${project.group}.$directoryName.$pluginName"
     website = "http://www.github.com/highright1234/${project.name}"
     author = "HighRight"
-    (libraries ?: listOf()).plus(monunLibraries).also {
-        libraries = it
-    }
+    softDepend = listOf(
+        "SeniorCenterTwerkMachine"
+    )
+//    (libraries ?: listOf()).plus(monunLibraries).also {
+//        libraries = it
+//    }
 }
 
 tasks.register<Jar>("pluginsUpdate") {
