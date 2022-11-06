@@ -18,7 +18,7 @@ val monunLibraries = mutableListOf<String>()
 fun DependencyHandlerScope.monunLibrary(name: String, version: String) {
     compileOnly("io.github.monun:$name-api:$version")
 //    monunLibraries += "io.github.monun:$name-core:$version"
-    library("io.github.monun:$name-core:$version")
+//    library("io.github.monun:$name-core:$version")
 }
 
 /*
@@ -39,14 +39,14 @@ dependencies {
     monunLibrary("tap", Versions.TAP)
     monunLibrary("invfx", Versions.INVFX)
     monunLibrary("kommand", Versions.KOMMAND)
-    bukkitLibrary("com.github.shynixn.mccoroutine:mccoroutine-bukkit-api:${Versions.MC_COROUTINE}")
-    bukkitLibrary("com.github.shynixn.mccoroutine:mccoroutine-bukkit-core:${Versions.MC_COROUTINE}")
-    library("org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.COROUTINE}")
-    library("io.github.highright1234:shotokonoko:0.0.9")
+    compileOnly("com.github.shynixn.mccoroutine:mccoroutine-bukkit-api:${Versions.MC_COROUTINE}")
+    compileOnly("com.github.shynixn.mccoroutine:mccoroutine-bukkit-core:${Versions.MC_COROUTINE}")
+    compileOnly("org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.COROUTINE}")
+    compileOnly("io.github.highright1234:shotokonoko:0.0.9")
     compileOnly(files("libs/SeniorCenterTwerkMachine.jar"))
     compileOnly("io.papermc.paper:paper-api:${project.bukkit.apiVersion}-R0.1-SNAPSHOT")
-    library(kotlin("stdlib-jdk8"))
-    library(kotlin("reflect"))
+    compileOnly(kotlin("stdlib-jdk8"))
+    compileOnly(kotlin("reflect"))
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
     testImplementation("io.kotlintest:kotlintest-runner-junit5:3.4.2")
@@ -70,7 +70,7 @@ bukkit {
     main = "${project.group}.$directoryName.$pluginName"
     website = "http://www.github.com/highright1234/${project.name}"
     author = "HighRight"
-    softDepend = listOf(
+    depend = listOf(
         "SeniorCenterTwerkMachine"
     )
 //    (libraries ?: listOf()).plus(monunLibraries).also {

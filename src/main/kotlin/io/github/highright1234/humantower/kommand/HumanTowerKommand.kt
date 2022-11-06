@@ -1,7 +1,7 @@
-package io.github.highright1234.harasample.kommand
+package io.github.highright1234.humantower.kommand
 
-import io.github.highright1234.harasample.HumanTower
-import io.github.highright1234.harasample.TowerMaker
+import io.github.highright1234.humantower.HumanTower
+import io.github.highright1234.humantower.TowerMaker
 import io.github.highright1234.shotokonoko.monun.suspendingExecutes
 import io.github.monun.kommand.PluginKommand
 import io.github.monun.kommand.getValue
